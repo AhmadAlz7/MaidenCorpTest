@@ -1,7 +1,6 @@
 const BASE_URL = 'https://filltext.com/?rows=10&fname={firstName}&lname={lastName}&category=[%22Category1%22,%22Category2%22,%22Category3%22,%22Category4%22]&pretty=true'
 var dataList;
-var dataCategories = [
-];
+var dataCategories = [];
 
 
 const getDatafromApi = async () => {
