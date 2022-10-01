@@ -1,0 +1,118 @@
+.header {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin-left: -10px;
+    margin-top: -10px;
+    margin-right: -10px;
+    padding: 10px;
+    background-color: #7EBDC2;
+    z-index: 10000;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: #231F20;
+    color: #231F20;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    margin-left: 5%;
+    margin-right: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-style: solid;
+    border-color: #231F20;
+    border-width: 1px;
+    background-color: #EFE6DD;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.filtersContainer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.categoryButton {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #F3DFA2;
+    border: none;
+    color: #231F20;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dataContainer {
+    padding: 5px;
+}
+
+.card {
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #231F20;
+    border-width: 2px;
+    padding: 10px;
+    background-color: #7EBDC2;
+    ;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.avatar {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-flex;
+    border-radius: 100px;
+    padding: 20px;
+    background-color: #BB4430;
+    color: #EFE6DD;
+    font-size: 48px;
+}
+
+.name {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-flex;
+    font-size: 32px;
+    margin-left: 20px;
+    color: #231F20;
+}
+
+.categoryTag {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #F3DFA2;
+    border: none;
+    color: #231F20;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    font-size: 16px;
+    margin: 4px;
+    border-radius: 20px;
+}
+
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    background-color: #BB4430;
+}
