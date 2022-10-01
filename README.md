@@ -1,4 +1,3 @@
 # MaidenCorpTest
 
-It took me a little bit more 15 minuteS to make it accept any number of categores.
-By changing the url, the website will render the number of categories as you send to the api
+It took me extra 15 minutes to make it render the filter buttons based on the number of categories returned from the Api, By changing the url, the website will render the number of categories as you send to the api.
