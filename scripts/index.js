@@ -1,20 +1,41 @@
-const BASE_URL = 'https://filltext.com/?rows=10&fname={firstName}&lname={lastName}&category=[%22Category1%22,%22Category2%22,%22Category3%22,%22Category4%22]&pretty=true'
-var dataList;
-var dataCategories = [];
+// const BASE_URL = 'https://filltext.com/?rows=10&fname={firstName}&lname={lastName}&category=[%22Category1%22,%22Category2%22,%22Category3%22,%22Category4%22]&pretty=true'
+const BASE_URL = 'https://filltext.com/'
+// var dataList;
+// var dataCategories = [];
 
 
-const getDatafromApi = async () => {
-    const response = await fetch(BASE_URL)
+window.onload = async function () {
+    const url = getUrl(10, ['Category1', 'Category2', 'Category3']);
+    const [dataList, dataCategories] = await getDatafromApi(url);
+    renderFilters(dataCategories);
+    renderCards(dataList);
+};
+
+const getUrl = (rows, categories) => {
+    var categoryConst = "";
+    var i;
+    for (i = 0; i < categories.length; i++) {
+        categoryConst += `\"${categories[i]}\"`
+        if (i < categories.length - 1)
+            categoryConst += ","
+    }
+    return (`${BASE_URL}?rows=${rows}&fname={firstName}&lname={lastName}&category=[${categoryConst}]&pretty=true`)
+}
+
+
+const getDatafromApi = async (url = BASE_URL) => {
+    const response = await fetch(url)
     const list = await response.json();
+    const dataCategories = []
     list.forEach((cate) => {
         if (!dataCategories.includes(cate.category))
             dataCategories.push(cate.category)
     })
     dataCategories.sort()
-    return list;
+    return [list, dataCategories];
 }
 
-const renderFilters = () => {
+const renderFilters = (dataCategories) => {
     const filtersContainer = document.getElementById('filtersContainer')
     dataCategories.forEach((item) => {
         const card = `
@@ -25,7 +46,7 @@ const renderFilters = () => {
 }
 
 
-const renderCards = () => {
+const renderCards = (dataList) => {
     const dataContainer = document.getElementById('dataContainer')
     dataList.forEach((item) => {
         const card = `
@@ -40,11 +61,6 @@ const renderCards = () => {
     })
 }
 
-window.onload = async function () {
-    dataList = await getDatafromApi();
-    renderFilters();
-    renderCards();
-};
 
 const filterData = (category) => {
     var i;
